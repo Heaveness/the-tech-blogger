@@ -1,45 +1,40 @@
 const express = require('express');
 const session = require('express-session');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const exphbs = require('express-handlebars');
+const path = require('path');
 const sequelize = require('./config/connection');
-const routes = require('./routes');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Configure middleware
+// Set up session middleware
+const sess = {
+  secret: 'YourSecretKey',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
+
+app.use(session(sess));
+
+// Set up handlebars as the template engine
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+
+// Set up middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
 
-// Configure session
-app.use(
-  session({
-    secret: 'your-secret-key',
-    resave: false,
-    saveUninitialized: true,
-    store: new SequelizeStore({
-      db: sequelize,
-    }),
-  })
-);
-
-// Configure routes
-app.use(routes);
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Start the server
-async function startServer() {
-  try {
-    // Sync the models with the database
-    await sequelize.sync({ force: false });
-    console.log('Database synced');
-
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-    });
-  } catch (error) {
-    console.error('Error connecting to the database:', error);
-  }
-}
-
-startServer();
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+});
