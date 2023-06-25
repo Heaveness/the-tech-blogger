@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const routes = require('./controllers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -32,9 +33,13 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Set up routes
+app.use(routes);
+
 // Start the server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
 });
+
