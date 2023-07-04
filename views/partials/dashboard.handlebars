@@ -1,0 +1,15 @@
+<h1>Dashboard</h1>
+
+{{#each posts}}
+  <div class="post">
+    <h2>{{title}}</h2>
+    <p>{{content}}</p>
+    <a href="/edit-post/{{id}}">Edit</a>
+    <button class="delete-post" data-post-id="{{id}}">Delete</button>
+  </div>
+{{/each}}
+
+<a href="/new-post">Add New Post</a>
+<script src="/js/delete-post.js"></script>
+<script src="/js/edit.js"></script>
+<script src="/js/new-post.js"></script>

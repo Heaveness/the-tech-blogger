@@ -1,0 +1,71 @@
+/* General Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2 {
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  /* Layout Styles */
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Specific Page Styles */
+  
+  /* Homepage Styles */
+  .post {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Dashboard Styles */
+  .dashboard .post {
+    position: relative;
+  }
+  
+  .dashboard .post .delete-post {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  /* Edit Post Styles */
+  .edit-post-form {
+    margin-bottom: 20px;
+  }
+  
+  /* Single Post Styles */
+  .comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Login and Signup Styles */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  /* Add Post Styles */
+  #add-post-form {
+    margin-bottom: 20px;
+  }
+  

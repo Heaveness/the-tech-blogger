@@ -1,15 +1,22 @@
-const { Sequelize } = require('sequelize');
+// Import the required packages and libraries.
 require('dotenv').config();
+const Sequelize = require('sequelize');
 
-// Retrieve the environment variables
-const { DB_NAME, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT } = process.env;
-
-// Configure the database connection
-const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
-  host: DB_HOST,
-  port: DB_PORT,
-  dialect: 'mysql',
-  logging: false, // Set to true if you want to see SQL queries in the console
-});
+// Create a new Sequelize instance with the appropriate configuration.
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  {
+    host: process.env.DB_HOST || 'localhost',
+    port: process.env.DB_PORT || 3306,
+    dialect: 'mysql',
+    dialectOptions: {
+      // Enable support for decimal numbers.
+      decimalNumbers: true,
+    },
+    logging: false, // Set to true if you want to see SQL queries in the console.
+  }
+);
 
 module.exports = sequelize;
