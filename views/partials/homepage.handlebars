@@ -1,11 +1,15 @@
-<h1>Homepage</h1>
-
-{{#each posts}}
-  <div class="post">
-    <h2>{{title}}</h2>
-    <p>{{content}}</p>
-    <a href="/post/{{id}}">Read More</a>
+<div class="row">
+  <div class="col-lg-8">
+    <!-- Existing Blog Posts -->
+    <h2>Latest Posts</h2>
+    {{#each posts}}
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{content}}</p>
+        <a href="/post/{{id}}" class="btn btn-primary">Read More</a>
+      </div>
+    </div>
+    {{/each}}
   </div>
-{{/each}}
-
-<script src="/js/comment.js"></script>
+</div>

@@ -1,16 +1,17 @@
-<h1>Login</h1>
+<h2>Login</h2>
 
-<form id="login-form">
-  <div>
-    <label for="username">Username:</label>
-    <input type="text" id="username">
+<form>
+  <div class="mb-3">
+    <label for="username" class="form-label">Username</label>
+    <input type="text" class="form-control" id="username">
   </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" id="password">
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password">
   </div>
-  <button type="submit">Login</button>
+  <button type="submit" class="btn btn-primary">Login</button>
 </form>
+<p>Don't have an account? <a href="/signup">Sign up instead</a></p>
 
 <script src="/js/login.js"></script>
 <script src="/js/sign-up.js"></script>

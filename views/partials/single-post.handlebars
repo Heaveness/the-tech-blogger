@@ -15,8 +15,9 @@
 {{/if}}
 
 {{#if isAuthenticated}}
-  <form class="comment-form" data-post-id="{{post.id}}">
-    <textarea class="comment-input"></textarea>
+  <form class="comment-form">
+    <input type="hidden" name="post-id" value="{{post.id}}">
+    <textarea name="comment-body"></textarea>
     <button type="submit">Submit Comment</button>
   </form>
 {{else}}
