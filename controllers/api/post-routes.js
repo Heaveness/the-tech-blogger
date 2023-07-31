@@ -46,6 +46,31 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
+// Get post by id
+router.get('/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Comment,
+          include: [User],
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('partials/single-post', { post, loggedIn: req.session.loggedIn }); // Changed 'post' to 'partials/single-post'
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 // Delete a post
 router.delete('/:id', withAuth, async (req, res) => {
   try {

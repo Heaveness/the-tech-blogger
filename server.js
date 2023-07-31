@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
@@ -11,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SECRET_KEY,
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -22,7 +23,14 @@ const sess = {
 
 app.use(session(sess));
 
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({
+  helpers,
+  defaultLayout: 'main',
+  layoutsDir: path.join(__dirname, 'views/layouts'),
+  partialsDir: [
+    path.join(__dirname, 'views/partials'),
+  ]
+});
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
