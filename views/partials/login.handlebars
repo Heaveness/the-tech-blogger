@@ -1,10 +1,10 @@
 <h2>Login</h2>
 <form id="login-form">
   <div class="mb-3">
-    <label for="email" class="form-label">Email</label>
-    <input type="email" class="form-control" id="email" required>
+    <label for="identifier" class="form-label">Username or Email</label>
+    <input type="text" class="form-control" id="identifier" required>
     <div class="invalid-feedback">
-      Please enter your email.
+      Please enter your username or email.
     </div>
   </div>
   <div class="mb-3">
@@ -14,9 +14,7 @@
       Please enter your password.
     </div>
   </div>
-  <div id="login-error" class="alert alert-danger d-none" role="alert">
-    Incorrect email or password, please try again.
-  </div>
   <button type="submit" class="btn btn-primary">Login</button>
 </form>
 <p>Don't have an account? <a href="/signup">Sign up instead</a></p>
+
