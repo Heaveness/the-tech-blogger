@@ -1,15 +1,19 @@
-<h1>New Post</h1>
-
-<form id="add-post-form">
-  <div>
-    <label for="post-title-input">Title:</label>
-    <input type="text" id="post-title-input">
+<h2>New Post</h2>
+<form id="new-post-form">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" required>
+    <div class="invalid-feedback">
+      Please enter a title.
+    </div>
   </div>
-  <div>
-    <label for="post-content-input">Content:</label>
-    <textarea id="post-content-input"></textarea>
+  <div class="mb-3">
+    <label for="content" class="form-label">Content</label>
+    <textarea class="form-control" id="content" rows="3" required></textarea>
+    <div class="invalid-feedback">
+      Please enter content.
+    </div>
   </div>
-  <button type="submit">Create Post</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
 <script src="/js/new-post.js"></script>
