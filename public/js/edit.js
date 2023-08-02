@@ -1,9 +1,9 @@
 const editPostHandler = async (event) => {
   event.preventDefault();
 
-  const postId = event.target.getAttribute('data-post-id');
-  const title = document.querySelector(`#title-${postId}`).value.trim();
-  const content = document.querySelector(`#content-${postId}`).value.trim();
+  const postId = event.currentTarget.getAttribute('data-post-id');
+  const title = document.querySelector('#post-title').value.trim();
+  const content = document.querySelector('#post-content').value.trim();
 
   if (title && content) {
     const response = await fetch(`/api/post/${postId}`, {
@@ -25,6 +25,4 @@ const editPostHandler = async (event) => {
   }
 };
 
-document.querySelectorAll('.edit-post').forEach((button) => {
-  button.addEventListener('click', editPostHandler);
-});
+document.querySelector('.edit-post-form').addEventListener('submit', editPostHandler);

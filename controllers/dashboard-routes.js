@@ -29,7 +29,7 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/new-post', withAuth, async (req, res) => {
   try {
     res.render('partials/new-post', {
-      logged_in: req.session.logged_in,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
