@@ -1,5 +1,7 @@
+// Import the Post model.
 const { Post } = require('../models');
 
+// Define an array of posts to be seeded.
 const postData = [
   {
     title: 'First Post',
@@ -13,6 +15,8 @@ const postData = [
   },
 ];
 
+// Define a function to seed the posts using bulkCreate.
 const seedPosts = () => Post.bulkCreate(postData);
 
+// Export the seedPosts function.
 module.exports = seedPosts;

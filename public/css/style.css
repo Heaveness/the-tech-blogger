@@ -1,3 +1,4 @@
+/* Set the default styles for the body of the website. */
 body {
     background-color: #282828;
     color: #f8f8f8; 
@@ -6,9 +7,10 @@ body {
     line-height: 1.5;
 }
 
+/* Set the styles for the navbar brand. */
 .navbar-brand {
     background-color: #f8f8f8;
-    color: #282828; 
+    color: #282828;
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 36px;
@@ -17,14 +19,16 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Set the styles for the navbar brand on hover. */
 .navbar-brand:hover {
-    background-color: #282828; 
-    color: #f8f8f8; 
+    background-color: #282828;
+    color: #f8f8f8;
     text-decoration: none;
 }
 
+/* Set the styles for the navigation links. */
 .nav-link {
     font-family: 'Arial', sans-serif;
     font-size: 24px;
-    color: #f8f8f8; 
+    color: #f8f8f8;
 }

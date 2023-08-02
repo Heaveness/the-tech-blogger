@@ -1,6 +1,8 @@
+// Import the User model and the bcrypt library.
 const { User } = require('../models');
 const bcrypt = require('bcrypt');
 
+// Define an array of users to be seeded. Passwords are hashed using bcrypt.
 const userData = [
   {
     username: 'john_doe',
@@ -14,6 +16,8 @@ const userData = [
   },
 ];
 
+// Define a function to seed the users using bulkCreate.
 const seedUsers = () => User.bulkCreate(userData);
 
+// Export the seedUsers function.
 module.exports = seedUsers;
