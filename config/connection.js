@@ -9,7 +9,7 @@ let sequelize;
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
-  const sequelize = new Sequelize(
+  sequelize = new Sequelize(
     process.env.DB_NAME,  // Name of the database.
     process.env.DB_USER,  // User name for database.
     process.env.DB_PASSWORD,  // Password for database user.
