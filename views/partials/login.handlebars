@@ -1,22 +1,35 @@
+<!-- Page title -->
 <h2>Login</h2>
+
+<!-- Login form -->
 <form id="login-form">
   <div class="mb-3">
+    <!-- Field for the username or email -->
     <label for="identifier" class="form-label">Username or Email</label>
     <input type="text" class="form-control" id="identifier" required>
     <div class="invalid-feedback">
       Please enter your username or email.
     </div>
   </div>
+  
   <div class="mb-3">
+    <!-- Field for the password -->
     <label for="password" class="form-label">Password</label>
     <input type="password" class="form-control" id="password-login" required>
     <div class="invalid-feedback">
       Please enter your password.
     </div>
   </div>
+  
+  <!-- Container for error messages -->
   <p id="error-message" style="color:red;"></p>
+  
+  <!-- Login button -->
   <button type="submit" class="btn btn-primary">Login</button>
 </form>
+
+<!-- Link to the signup page -->
 <p>Don't have an account? <a href="/signup">Sign up instead</a></p>
 
+<!-- Script for handling login -->
 <script src="/js/login.js"></script>

@@ -1,13 +1,20 @@
+<!-- Page title -->
 <h1>Dashboard</h1>
 
+<!-- Grid container -->
 <div class="row">
+  <!-- Loop through each post and display it in a card -->
   {{#each posts}}
     <div class="col-lg-4">
       <div class="card mb-4">
         <div class="card-body">
+          <!-- Post title -->
           <h5 class="card-title">{{this.title}}</h5>
+          <!-- Post content -->
           <p class="card-text">{{this.content}}</p>
+          <!-- Edit post button -->
           <a href="/dashboard/edit-post/{{this.id}}" class="btn btn-primary">Edit</a>
+          <!-- Delete post button -->
           <button class="delete-post btn btn-danger" data-post-id="{{this.id}}">Delete</button>
         </div>
       </div>
@@ -15,6 +22,8 @@
   {{/each}}
 </div>
 
+<!-- Add new post button -->
 <a href="/dashboard/new-post" class="btn btn-primary">Add New Post</a>
 
+<!-- Script for deleting a post -->
 <script src="/js/delete-post.js"></script>

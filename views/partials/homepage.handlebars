@@ -1,13 +1,20 @@
+<!-- Grid container -->
 <div class="row">
   <div class="col-lg-12">
     <!-- Existing Blog Posts -->
     <h2>Latest Posts</h2>
+    
+    <!-- Loop through each post and display it -->
     {{#each posts}}
     <div class="card mb-3">
       <div class="card-body">
+        <!-- Post title -->
         <h5 class="card-title">{{title}}</h5>
+        <!-- Post content -->
         <p class="card-text">{{content}}</p>
+        <!-- Information about the author and the date of posting -->
         <p>Posted by {{user.username}} on {{formatDate createdAt}}</p>
+        <!-- Read More button linking to the post's page -->
         <a href="/post/{{id}}" class="btn btn-primary">Read More</a>
       </div>
     </div>

@@ -1,38 +1,59 @@
+<!-- Single post card -->
 <div class="card mb-3">
   <div class="card-body">
+    <!-- Post title -->
     <h1 class="card-title">{{post.title}}</h1>
+    <!-- Post content -->
     <p class="card-text">{{post.content}}</p>
+    <!-- Information about the author and the date of posting -->
     <p>Posted by {{post.user.username}} on {{formatDate post.createdAt}}</p>
   </div>
 </div>
 
+<!-- Check if there are any comments on the post -->
 {{#if post.comments}}
+  <!-- Comments title -->
   <h2>Comments</h2>
+  
+  <!-- Loop through each comment and display it -->
   {{#each post.comments}}
     <div class="card mb-3">
       <div class="card-body">
+        <!-- Comment content -->
         <p class="card-text">{{content}}</p>
+        <!-- Information about the author of the comment -->
         <p>By: {{user.username}}</p>
+        <!-- Date of the comment -->
         <p>Date: {{formatDate createdAt}}</p>
       </div>
     </div>
   {{/each}}
+  
+  <!-- If there are no comments -->
 {{else}}
   <p>No comments yet.</p>
 {{/if}}
 
+<!-- Check if the user is logged in -->
 {{#if loggedIn}}
+  <!-- Comment form -->
   <form class="comment-form">
     <input type="hidden" name="post-id" value="{{post.id}}">
     <h5>Your Comment:</h5>
+    <!-- Field for the comment content -->
     <textarea name="comment-body" class="autoresizing" style="width: 100%; resize: none;"></textarea>
     <br/>
+    <!-- Character count for the comment content -->
     <div id="charCount">2000 characters remaining</div>
+    <!-- Submit button -->
     <button type="submit" class="btn btn-primary">Submit Comment</button>
   </form>
+  
+  <!-- If the user is not logged in -->
 {{else}}
   <p>Please <a href="/login">log in</a> to leave a comment.</p>
 {{/if}}
 
+<!-- Scripts for handling comments and deleting comments -->
 <script src="/js/comment.js"></script>
 <script src="/js/delete-comment.js"></script>

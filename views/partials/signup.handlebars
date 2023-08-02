@@ -1,28 +1,41 @@
+<!-- Page title -->
 <h2>Sign Up</h2>
+
+<!-- Sign up form -->
 <form id="signup-form">
   <div class="mb-3">
+    <!-- Field for the username -->
     <label for="username" class="form-label">Username</label>
     <input type="text" class="form-control" id="username" required>
     <div class="invalid-feedback">
       Please enter a username.
     </div>
   </div>
+  
   <div class="mb-3">
+    <!-- Field for the email -->
     <label for="email" class="form-label">Email</label>
     <input type="email" class="form-control" id="email" required>
     <div class="invalid-feedback">
       Please enter your email.
     </div>
   </div>
+  
   <div class="mb-3">
+    <!-- Field for the password -->
     <label for="password" class="form-label">Password</label>
     <input type="password" class="form-control" id="password" required>
     <div class="invalid-feedback">
       Please enter a password.
     </div>
   </div>
+  
+  <!-- Sign Up button -->
   <button type="submit" class="btn btn-primary">Sign Up</button>
 </form>
+
+<!-- Link to the login page -->
 <p>Already have an account? <a href="/login">Login instead</a></p>
 
+<!-- Script for handling sign up -->
 <script src="/js/sign-up.js"></script>
