@@ -1,15 +1,20 @@
 <h1>Edit Post</h1>
 
-<form class="edit-post-form" data-post-id="{{post.id}}">
-  <div>
-    <label for="post-title">Title:</label>
-    <input type="text" id="post-title" class="post-title-input" value="{{post.title}}">
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title">Edit Post</h1>
+    <form class="edit-post-form" data-post-id="{{post.id}}">
+      <div class="form-group">
+        <label for="post-title">Title:</label>
+        <input type="text" id="post-title" class="post-title-input form-control" value="{{post.title}}">
+      </div>
+      <div class="form-group">
+        <label for="post-content">Content:</label>
+        <textarea id="post-content" class="post-content-input form-control">{{post.content}}</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
   </div>
-  <div>
-    <label for="post-content">Content:</label>
-    <textarea id="post-content" class="post-content-input">{{post.content}}</textarea>
-  </div>
-  <button type="submit">Save Changes</button>
-</form>
+</div>
 
 <script src="/js/edit.js"></script>

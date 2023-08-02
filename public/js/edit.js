@@ -1,7 +1,7 @@
 const editPostHandler = async (event) => {
   event.preventDefault();
 
-  const postId = event.target.getAttribute('data-id');
+  const postId = event.target.getAttribute('data-post-id');
   const title = document.querySelector(`#title-${postId}`).value.trim();
   const content = document.querySelector(`#content-${postId}`).value.trim();
 

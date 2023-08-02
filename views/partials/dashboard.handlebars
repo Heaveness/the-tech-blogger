@@ -7,7 +7,7 @@
         <div class="card-body">
           <h5 class="card-title">{{this.title}}</h5>
           <p class="card-text">{{this.content}}</p>
-          <a href="/edit-post/{{this.id}}" class="btn btn-primary">Edit</a>
+          <a href="/dashboard/edit-post/{{this.id}}" class="btn btn-primary">Edit</a>
           <button class="delete-post btn btn-danger" data-post-id="{{this.id}}">Delete</button>
         </div>
       </div>
@@ -15,6 +15,6 @@
   {{/each}}
 </div>
 
-<a href="/new-post" class="btn btn-primary">Add New Post</a>
+<a href="/dashboard/new-post" class="btn btn-primary">Add New Post</a>
 
 <script src="/js/delete-post.js"></script>

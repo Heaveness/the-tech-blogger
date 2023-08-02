@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Dashboard route
@@ -45,12 +45,21 @@ router.get('/edit-post/:id', withAuth, async (req, res) => {
           model: User,
           attributes: ['username'],
         },
+        {
+          model: Comment,
+          include: [
+            {
+              model: User,
+              attributes: ['username'],
+            },
+          ],
+        },
       ],
     });
 
     const post = postData.get({ plain: true });
 
-    res.render('edit-post', { post, loggedIn: req.session.loggedIn });
+    res.render('partials/edit-post', { post, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
