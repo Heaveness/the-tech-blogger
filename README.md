@@ -11,6 +11,7 @@
 - [License](#license)
 - [Contributing](#contribution)
 - [Tests](#tests)
+- [Previews](#previews)
 - [Links](#links)
 - [Credits](#credits)
 - [Questions](#questions)
@@ -35,6 +36,10 @@ This project is licensed under the MIT license.
 ## Contribution
 Please use proper general rules for contribution and merging. Always git pull before you git push your changes. And no merge conflicts please. <br>
   
+## Previews
+
+![App Preview Page!](public/screenshot/14-mvc-homework-demo-01.gif)
+
 ## Tests
 Use this command to test: <br>
 node server.js <br>
@@ -44,8 +49,8 @@ npm start <br>
 Use API call websites like Postman or Insomnia to get the database.<br>
 
 ## Links
-**Walkthrough:** [Link to the walkthrough video!]() <br>
 **Github Repo:** [Link to Github repository!](https://github.com/Heaveness/the-tech-blogger) <br>
+**Heroku App:** [Link to the Heroku App!]() <br>
 
 ## Credits
 **Websites:** W3schools, stackoverflow, & reddit <br>

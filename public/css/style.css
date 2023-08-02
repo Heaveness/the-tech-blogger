@@ -1,0 +1,30 @@
+body {
+    background-color: #282828;
+    color: #f8f8f8; 
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.navbar-brand {
+    background-color: #f8f8f8;
+    color: #282828; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 36px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    background-color: #282828; 
+    color: #f8f8f8; 
+    text-decoration: none;
+}
+
+.nav-link {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #f8f8f8; 
+}
