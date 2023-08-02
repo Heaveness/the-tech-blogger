@@ -38,10 +38,10 @@ Please use proper general rules for contribution and merging. Always git pull be
   
 ## Previews
 
-![App Preview Page 1!]()
-![App Preview Page 2!]()
-![App Preview Page 3!]()
-![App Preview Page 4!]()
+![Tech Blog Preview 1](public/screenshot/Tech-Blog-Preview-1.png) <br>
+![Tech Blog Preview 2](public/screenshot/Tech-Blog-Preview-2.png) <br>
+![Tech Blog Preview 3](public/screenshot/Tech-Blog-Preview-3.png) <br>
+![Tech Blog Preview 4](public/screenshot/Tech-Blog-Preview-4.png) <br>
 
 ## Tests
 Use this command to test: <br>
