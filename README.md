@@ -38,7 +38,10 @@ Please use proper general rules for contribution and merging. Always git pull be
   
 ## Previews
 
-![App Preview Page!](public/screenshot/14-mvc-homework-demo-01.gif)
+![App Preview Page 1!]()
+![App Preview Page 2!]()
+![App Preview Page 3!]()
+![App Preview Page 4!]()
 
 ## Tests
 Use this command to test: <br>
