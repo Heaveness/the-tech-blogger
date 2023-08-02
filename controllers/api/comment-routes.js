@@ -6,9 +6,9 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
-      comment: req.body.comment,
-      userId: req.session.userId,
-      postId: req.body.postId,
+      content: req.body.content,
+      user_id: req.session.userId,
+      post_id: req.body.postId,
     });
 
     res.status(200).json(newComment);
@@ -18,6 +18,24 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    const deletedComment = await Comment.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.userId,
+      },
+    });
+
+    if (!deletedComment) {
+      res.status(404).json({ message: 'No comment found with this id!' });
+      return;
+    }
+
+    res.status(200).json(deletedComment);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
-
-

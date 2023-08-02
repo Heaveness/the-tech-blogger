@@ -8,7 +8,7 @@ router.post('/', withAuth, async (req, res) => {
     const newPost = await Post.create({
       title: req.body.title,
       content: req.body.content,
-      userId: req.session.userId,
+      user_id: req.session.userId,
     });
 
     res.status(200).json(newPost);
@@ -29,7 +29,7 @@ router.put('/:id', withAuth, async (req, res) => {
       {
         where: {
           id: req.params.id,
-          userId: req.session.userId,
+          user_id: req.session.userId,
         },
       }
     );
@@ -57,14 +57,19 @@ router.get('/:id', async (req, res) => {
         },
         {
           model: Comment,
-          include: [User],
+          include: [
+            {
+              model: User,
+              attributes: ['username'],
+            },
+          ],
         },
       ],
     });
 
     const post = postData.get({ plain: true });
 
-    res.render('partials/single-post', { post, loggedIn: req.session.loggedIn }); // Changed 'post' to 'partials/single-post'
+    res.render('partials/single-post', { post, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -77,7 +82,7 @@ router.delete('/:id', withAuth, async (req, res) => {
     const deletedPost = await Post.destroy({
       where: {
         id: req.params.id,
-        userId: req.session.userId,
+        user_id: req.session.userId,
       },
     });
 
@@ -90,6 +95,20 @@ router.delete('/:id', withAuth, async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
+  }
+});
+
+router.post('/post', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.create({
+      title: req.body.title,
+      content: req.body.content,
+      user_id: req.session.user_id,
+    });
+
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
 
