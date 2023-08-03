@@ -3,7 +3,13 @@
 ![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)
 
 ## Description
-
+The Tech Blogger is an interactive blogging platform designed specifically for tech enthusiasts. It provides a space for users to share their thoughts, insights, and opinions on various tech-related topics. Users can create an account, write their own blog posts, and comment on others' posts, fostering an engaging community dialogue. <br>
+<br>
+Built with Node.js, Express.js, and MySQL, the application utilizes a MVC (Model-View-Controller) structure to separate the concerns of data handling, user interface, and control flow. It leverages Sequelize for database management and Express Handlebars as a template engine for generating HTML. <br>
+<br>
+Additionally, the application includes user authentication to ensure data security and integrity. It has been deployed on Heroku with JawsDB for online persistent storage. <br>
+<br>
+Whether you're an experienced tech professional, a hobbyist, or a beginner just starting your journey, The Tech Blogger is a great platform to share your insights and learn from the community.<br>
 
 ## Table of Contents
 - [Installation](#installation)
