@@ -59,7 +59,7 @@ Use API call websites like Postman or Insomnia to get the database.<br>
 
 ## Links
 **Github Repo:** [Link to Github repository!](https://github.com/Heaveness/the-tech-blogger) <br>
-**Heroku App:** [Link to the Heroku App!]() <br>
+**Heroku App:** [Link to the Heroku App!](https://the-tech-blogger-heaveness-7bf39de84259.herokuapp.com/) <br>
 
 ## Credits
 **Websites:** W3schools, stackoverflow, & reddit <br>
